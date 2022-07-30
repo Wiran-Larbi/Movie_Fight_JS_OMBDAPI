@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+
+/*  Custom CSS  */
+/*?  Icons  ?*/
+
+/*font-bold text-lg text-slate-800  font-bold text-lg text-slate-800*/
+.movie-title{
+  @apply font-semibold text-lg text-slate-600;
+}
+.movie-icon{
+ @apply fill-slate-500 w-5 absolute top-4 left-3 transition-colors;
+}
+.movie-type{
+  @apply text-sm text-white font-normal
+         absolute right-0 -top-4 
+          px-4 py-1
+          rounded-tr-md rounded-bl-sm ;
+}
+
+.divisor{
+  @apply w-full my-0 border-t-0 border-l-0 border-r-0 border border-dotted ;
+}
+.red{
+    @apply bg-red-500 shadow-sm shadow-red-300;
+}
+.violet{
+    @apply bg-violet-500 shadow-sm shadow-violet-300;
+}
+/*! Navigation  */
+
+/*! Game Container */
+.game-container{
+  /*background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(97,186,255,1) 0%, rgba(166,239,253,.8) 90.1% );*/
+  @apply  container w-full h-max min-h-screen mx-auto mt-2 py-0 pb-0
+  flex flex-row justify-center
+  border rounded-sm shadow-md;
+}
+.play-container{
+  @apply w-full h-screen
+  flex flex-col md:flex-row md:flex-wrap  justify-around md:items-start items-center md:py-12 space-y-0 ;
+}
+
+/*! Input */
+.input{
+  @apply border border-slate-300 rounded-lg 
+  px-10 py-3 outline-none w-72
+  font-normal text-slate-600 transition-all ring-0
+  placeholder:font-lato placeholder:font-thin;
+}
+.input:focus{
+   @apply ring-1 ring-red-500 border-red-500; 
+}
+.input:focus ~ .movie-icon{
+   @apply fill-red-400;
+}
+.player-container{
+   @apply w-1/2
+    relative
+   flex flex-col items-center justify-start space-y-6;
+}
+/*! Search Container */
+.search-wrapper{
+  @apply
+  bg-transparent
+  flex-col items-center
+  shadow-md;
+}
+.search-selected{
+   @apply bg-yellow-100 border-yellow-500;
+}
+.search-selected ~ .movie-icon{
+   @apply fill-yellow-500;
+}
+.search-result{
+  @apply  active:scale-95 active:shadow-md transition-transform
+  relative w-[112%] pr-3 pl-2 py-3 cursor-pointer
+  flex flex-row items-center space-x-4 space-y-4 scale-90
+  border rounded-md
+  bg-white hover:bg-white hover:opacity-100;
+}
+
+.selected-wrapper{
+  @apply 
+  bg-transparent
+  max-w-max p-4
+  flex-col gap-3 justify-center
+  border rounded-md shadow-sm;
+}
+.selected-container{
+  @apply 
+  max-w-md
+  min-w-fit
+  flex md:flex-col flex-col space-y-4;
+}
+.selected-description{
+  @apply 
+  flex md:flex-row flex-col md:items-stretch items-center md:space-x-2 space-y-4 md:space-y-0 
+}
+.selected-Title{
+  @apply text-slate-600 text-2xl font-bold;
+}
+.selected-Text{
+  @apply text-slate-400 text-sm font-light break-words;
+}
+.boxoffice{
+  @apply 
+  flex flex-row justify-between items-center
+  w-full p-4 py-6
+  font-semibold text-lg text-slate-600 
+  bg-yellow-100 border border-yellow-500 rounded-md;
+}
+.critic{
+  @apply 
+  w-full p-4 py-6
+  flex flex-row justify-between items-center
+  font-semibold text-lg text-slate-600
+  bg-green-100 border border-green-500 rounded-md;
+}
+
+.msgIndic{
+   @apply w-max 
+   cursor-pointer hover:bg-blue-400 hover:text-white hover:border-blue-500 hover:shadow-lg hover:shadow-blue-300 transition-all
+   font-extralight text-2xl text-blue-300 text-center
+   bg-white px-12 py-6 border border-slate-300 rounded-md shadow-md shadow-blue-50;
+}
+.genre-wrapper{
+  @apply w-full flex  flex-row space-x-2;
+}
+.genre{
+  @apply text-slate-50 text-sm font-normal py-1 px-2 rounded-sm shadow-md bg-transparent;
+}
+
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .checkbox-label {
+    color: #06b6d499;
+    background-color: #47B5FF;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .fa-moon {color: #f1c40f;}
+  
+  .fa-sun {color: #f39c12;}
+  
+  .checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+  }
