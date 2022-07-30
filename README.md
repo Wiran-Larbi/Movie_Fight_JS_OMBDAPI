@@ -1,5 +1,6 @@
 # Movie_Fight_JS_OMBDAPI
 a Game Based on the OMDBAPI ,Played Between Two Players
+`You can play it @` https://omdbapigame.netlify.app/
 
 # ScreenShots
 
